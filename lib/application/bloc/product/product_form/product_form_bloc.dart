@@ -32,12 +32,23 @@ class ProductFormBloc extends Bloc<ProductFormEvent, ProductFormState> {
             state.copyWith(product: state.product.copyWith(unitType: x.value))),
         saved: (_) async {
           emit(state.copyWith(isSaving: true));
-          await productRepository
-              .create(state.product)
-              .then((failureOrAddedProduct) {
-            emit(state.copyWith(
-                saveFailureOrSuccessOption: optionOf(failureOrAddedProduct)));
-          });
+          final now = DateTime.now();
+          if (state.isEditing) {
+            await productRepository
+                .update(state.product.copyWith(updatedAt: now))
+                .then((failureOrUpdatedProduct) {
+              emit(state.copyWith(
+                  saveFailureOrSuccessOption:
+                      optionOf(failureOrUpdatedProduct)));
+            });
+          } else {
+            await productRepository
+                .create(state.product.copyWith(createdAt: now, updatedAt: now))
+                .then((failureOrAddedProduct) {
+              emit(state.copyWith(
+                  saveFailureOrSuccessOption: optionOf(failureOrAddedProduct)));
+            });
+          }
         });
   }
 }
