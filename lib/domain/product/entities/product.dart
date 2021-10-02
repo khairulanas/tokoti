@@ -52,7 +52,7 @@ class Product {
 
   Map<String, dynamic> toMap() {
     return {
-      'id': id,
+      // 'id': id,
       'name': name,
       'unitType': unitType,
       'price': price,

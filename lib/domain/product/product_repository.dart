@@ -4,9 +4,8 @@ import 'package:tokoti/utils/failure.dart';
 
 abstract class ProductRepository {
   Future<Either<Failure, Product>> create(Product newProduct);
-  Future<String?> update(Product newProduct) async {}
-  Future<String?> delete(Product newProduct) async {}
-  Future<Product?> getById(String id) async {}
+  Future<Either<Failure, Product>> update(Product editProduct);
+  Future<Either<Failure, Unit>> delete(String productId);
+  Future<Either<Failure, Product>> getById(String productId);
   Future<Either<Failure, List<Product>>> getAll();
-  Future<List<Product>?> searchByname() async {}
 }
