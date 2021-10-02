@@ -27,6 +27,7 @@
 .flutter-plugins
 .flutter-plugins-dependencies
 .packages
+objectbox.g.dart
 .pub-cache/
 .pub/
 /build/
