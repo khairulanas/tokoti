@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "17790138988",
+    "project_id": "tokoti-dev",
+    "storage_bucket": "tokoti-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:17790138988:android:37bbcb8bca79f708ef3649",
+        "android_client_info": {
+          "package_name": "dev.byneet.tokoti"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "17790138988-dqrf711njd97u958dlq406et24moog03.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.byneet.tokoti",
+            "certificate_hash": "07f41c35689d955d5d1ca2b7ccddeda87930fcc4"
+          }
+        },
+        {
+          "client_id": "17790138988-0tnl8sijbjak42v2pb1u7um0ogopkaom.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDkgxUkB73BijxgxGqna4nXXYnAuFczig"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "17790138988-0tnl8sijbjak42v2pb1u7um0ogopkaom.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
