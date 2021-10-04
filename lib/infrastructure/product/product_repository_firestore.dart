@@ -60,4 +60,20 @@ class ProductRepositoryFirestore implements ProductRepository {
       return left(Failure(message: 'ProductRepositoryError: ${e.toString()}'));
     }
   }
+
+  @override
+  Stream<Either<Failure, List<Product>>> watchAll() async* {
+    try {
+      yield* _firestore.producCol
+          .orderBy('updatedAt', descending: true)
+          .snapshots()
+          .map(
+            (snap) => right(
+              snap.docs.map((doc) => Product.fromFirestore(doc)).toList(),
+            ),
+          );
+    } catch (e) {
+      yield left(Failure(message: 'ProductRepositoryError: ${e.toString()}'));
+    }
+  }
 }

@@ -8,4 +8,5 @@ abstract class ProductRepository {
   Future<Either<Failure, Unit>> delete(String productId);
   Future<Either<Failure, Product>> getById(String productId);
   Future<Either<Failure, List<Product>>> getAll();
+  Stream<Either<Failure, List<Product>>> watchAll();
 }
